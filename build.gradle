@@ -8,11 +8,12 @@ buildscript {
     }
     dependencies {
         classpath 'com.google.guava:guava:22.0'
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+
 }
 
 allprojects {
@@ -24,4 +25,25 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+
+task runConnectedAndroidTests {
+    group("test tasks")
+    dependsOn(['startLocalServer', 'runTests', 'stopLocalServer'])
+}
+
+task startLocalServer {
+    dependsOn ':backend:appengineStart'
+    evaluationDependsOn(":backend")
+}
+
+task runTests {
+    dependsOn 'app:connectedAndroidTest'
+    mustRunAfter "startLocalServer"
+}
+
+task stopLocalServer {
+    dependsOn ':backend:appengineStop'
+    mustRunAfter "runTests"
 }

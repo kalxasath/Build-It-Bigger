@@ -18,10 +18,12 @@
  * limitations under the License.
  */
 -->
-
 <resources>
-    <string name="app_name">androidLibrary</string>
-    <string name="instructions">Your Joke Will Appear Here Shortly</string>
-    <string name="activity_error_message_missing_extras">Missing extra data for activity %1$s</string>
-    <string name="default_joke">I received an empty joke ...</string>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSubtitle">#75000000</color>
+    <color name="textPrimaryContent">#60000000</color>
+    <color name="textSecondaryContent">#40000000</color>
+
+    <color name="textTitle">#D0000000</color>
+    <color name="cardBackgroundColor">#EEEEEE</color>
 </resources>

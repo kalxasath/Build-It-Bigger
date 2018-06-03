@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.aiassoft.jokeslibrary;
+package com.aiassoft.javalibrary;
 
 import java.util.Random;
 
@@ -24,11 +24,14 @@ import java.util.Random;
  * Created by gvryn on 02/06/18.
  */
 
-public class jokesProvider {
+/**
+ * This Java library provides a random joke
+ */
+public final class JokesProvider {
 
     /**
-     * We will never need to create an instance of the jokesProvider class
-     */    private jokesProvider() {
+     * We will never need to create an instance of the JokesProvider class
+     */    private JokesProvider() {
         throw new AssertionError("No Instances for you!");
     }
 
